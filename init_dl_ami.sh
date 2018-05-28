@@ -16,7 +16,7 @@ echo '{
 
 echo "Installing Packages"
 source activate pytorch_p36
-conda install -y fastparquet pyarrow python-snappy jupyterlab -c conda-forge nodejs
+conda install -y fastparquet pyarrow python-snappy jupyterlab nodejs -c conda-forge
 pip install tqdm s3fs
 
 echo "Installing plugins"
