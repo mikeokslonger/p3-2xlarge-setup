@@ -2,8 +2,7 @@
 
 echo "Installing tmux, htop"
 sudo yum install -y tmux htop
-echo "Creating certs"
-openssl req -x509 -nodes -days 365 -newkey rsa:2048 -keyout mykey.key -out mycert.pem -subj '/C=AU'
+
 
 echo "Writing out password"
 mkdir $HOME/.jupyter
@@ -27,6 +26,8 @@ conda install -y fastparquet pyarrow python-snappy jupyterlab nodejs -c conda-fo
 pip install tqdm s3fs
 
 echo "Starting Jupyter in tmux session"
+cd $HOME
+openssl req -x509 -nodes -days 365 -newkey rsa:2048 -keyout mykey.key -out mycert.pem -subj '/C=AU'
 tmux new-session -d -s "jupyter" "bash -c 'jupyter notebook --ip 0.0.0.0 --certfile mycert.pem --keyfile mykey.key'"
 
 
