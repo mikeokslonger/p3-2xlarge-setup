@@ -24,6 +24,7 @@ jupyter labextension install @jupyterlab/plotly-extension
 source activate pytorch_p36
 conda install -y fastparquet pyarrow python-snappy jupyterlab nodejs -c conda-forge
 pip install tqdm s3fs
+source deactivate
 
 echo "Starting Jupyter in tmux session"
 cd $HOME
