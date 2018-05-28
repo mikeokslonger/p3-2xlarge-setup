@@ -5,7 +5,7 @@ sudo yum install -y tmux htop
 
 
 echo "Writing out password"
-mkdir $HOME/.jupyter
+mkdir -p $HOME/.jupyter
 echo '{
   "NotebookApp": {
     "password": "sha1:501e4830926a:a14e9764e5fa9cd50d8e386f71ff4052e79d2d8f"
@@ -30,5 +30,5 @@ cd $HOME
 openssl req -x509 -nodes -days 365 -newkey rsa:2048 -keyout mykey.key -out mycert.pem -subj '/C=AU'
 tmux new-session -d -s "jupyter" "bash -c 'jupyter notebook --ip 0.0.0.0 --certfile mycert.pem --keyfile mykey.key'"
 
-
+git clone https://github.com/mikeokslonger/pytorch.git
 
