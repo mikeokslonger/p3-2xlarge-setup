@@ -22,7 +22,7 @@ jupyter nbextension enable vim_binding/vim_binding
 jupyter labextension install @jupyterlab/plotly-extension
 
 source activate pytorch_p36
-conda install -y fastparquet pyarrow python-snappy jupyterlab nodejs -c conda-forge
+conda install -y dask distributed fastparquet pyarrow python-snappy jupyterlab nodejs -c conda-forge
 pip install tqdm s3fs
 source deactivate
 
